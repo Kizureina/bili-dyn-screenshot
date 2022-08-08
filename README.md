@@ -1,4 +1,4 @@
-## 基于falsk和selenium的接口
+## 基于flask和selenium的接口
 接受POST请求里的动态id字段，返回动态截图的图床链接
 ```
 import requests

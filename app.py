@@ -27,7 +27,7 @@ def dyn_scnshot(url):
     chrome_options.add_argument('--no-sandbox')
     chrome_options.add_argument('--disable-dev-shm-usage')
     chrome_options.add_argument('--headless')
-    #chrome_driver = '/mnt/e/workplace/chromedriver_win32/chromedriver.exe'
+    #chrome_driver = '/chromedriver_win32/chromedriver.exe'
     driver = webdriver.Chrome(executable_path=chrome_driver,chrome_options=chrome_options)
     
     driver.maximize_window()
@@ -46,9 +46,9 @@ def dyn_scnshot(url):
     right = pic_ele.size.get('width') + left + 160
     bottom = pic_ele.size.get('height') + top
     
-    img = Image.open(r'/mnt/e/api.png')
+    img = Image.open(r'/api.png')
     pic_ele = img.crop((left,top,right,bottom))
-    pic_ele.save(r'/mnt/e/apied.png')
+    pic_ele.save(r'/apied.png')
     driver.quit()
 
 
