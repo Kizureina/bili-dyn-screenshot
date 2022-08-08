@@ -13,7 +13,7 @@ def index():
     if request.method == 'POST':
         url = str('https://t.bilibili.com/' + request.form['dynid'])
         dyn_scnshot(url)
-        imgurl = upload_to_JD("/mnt/e/apied.png")
+        imgurl = upload_to_JD("/apied.png")
         return imgurl
 
     if request.method == 'GET':
@@ -27,7 +27,7 @@ def dyn_scnshot(url):
     chrome_options.add_argument('--no-sandbox')
     chrome_options.add_argument('--disable-dev-shm-usage')
     chrome_options.add_argument('--headless')
-    chrome_driver = '/mnt/e/workplace/chromedriver_win32/chromedriver.exe'
+    #chrome_driver = '/mnt/e/workplace/chromedriver_win32/chromedriver.exe'
     driver = webdriver.Chrome(executable_path=chrome_driver,chrome_options=chrome_options)
     
     driver.maximize_window()
@@ -36,7 +36,7 @@ def dyn_scnshot(url):
     time.sleep(1)
     driver.execute_script('window.scrollTo(0, 0)')
     time.sleep(1)
-    driver.get_screenshot_as_file("/mnt/e/api.png")
+    driver.get_screenshot_as_file("/api.png")
     #定位元素
     driver.implicitly_wait(10)
 
